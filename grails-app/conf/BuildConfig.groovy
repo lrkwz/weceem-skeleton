@@ -37,13 +37,15 @@ grails.project.dependency.resolution = {
 
         grailsPlugins()
         grailsHome()
-        mavenLocal()
+        //mavenLocal()
         grailsCentral()
         mavenCentral()
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo "http://repo.compass-project.org"
+        mavenRepo "http://repo.grails.org/grails/core"
     }
 
     dependencies {
@@ -52,6 +54,9 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
+	    compile ":weceem:1.1.3-SNAPSHOT"
+	    compile ":searchable:0.6.6"
+
         // plugins for the build system only
         build ":tomcat:7.0.47"
 
@@ -60,7 +65,7 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.1'
 
         // plugins needed at runtime but not for compilation
-        runtime ":hibernate:3.6.10.6" // or ":hibernate4:4.1.11.6"
+        compile ":hibernate:3.6.10.6" // or ":hibernate4:4.1.11.6"
         runtime ":database-migration:1.3.8"
         runtime ":jquery:1.10.2.2"
         runtime ":resources:1.2.1"
